@@ -1,0 +1,29 @@
+.home-header-container {
+  left: 0;
+  height: 80px;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+}
+
+.home-header-text {
+  background: linear-gradient(
+    to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12
+  );
+  background-clip: text;
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0;
+  padding: 0.6rem 0 0 1rem;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.home-main-container {
+  display: flex;
+  padding: 100px 1rem 0;
+  justify-content: space-around;
+  width: 100vw;
+}

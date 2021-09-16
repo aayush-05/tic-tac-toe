@@ -1,38 +1,84 @@
-.App {
+:root {
+  --black: #000000;
+  --white: #ffffff;
+  --primary-blue: #004d7a;
+  --primary-blue-shadow: #0869723f;
+  --light-grey: #ced4da;
+  --container-boarder: #00000010;
+  --container-shadow: #00000029;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 1rem;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+.modal-backdrop,
+.modal-outer-container {
+  background-color: var(--black);
+  height: 100vh;
+  opacity: 0.5;
+  position: fixed;
+  transition: opacity 0.3s ease;
+  width: 100vw;
+  z-index: 1;
+}
+
+.modal-outer-container {
+  background-color: transparent;
+  opacity: 1;
+  z-index: 2;
+}
+
+.modal-container {
+  background-color: var(--white);
+  border-radius: 0.3rem;
+  margin: 20vh auto auto;
+  max-width: 90%;
+  padding: 2rem 2rem;
+  position: relative;
+  width: 500px;
+}
+
+.modal-heading {
+  background: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+  background-clip: text;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0 0 1.5rem;
   text-align: center;
+  user-select: none;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.button-primary {
+  background-color: var(--primary-blue);
+  border: 0;
+  border-radius: 0.3rem;
+  color: var(--white);
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.6rem 1.5rem;
+  transition: opacity 0.2s ease;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.button-primary:focus {
+  outline: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.button-primary:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.button-primary:focus-visible {
+  box-shadow: 0 0 0 0.2rem var(--primary-blue-shadow);
 }

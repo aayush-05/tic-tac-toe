@@ -1,0 +1,16 @@
+.winner-modal-crown-symbol {
+  font-size: 10rem;
+  margin: -3rem auto 0;
+  text-align: center;
+}
+
+.winner-modal-button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1.5rem;
+}
+
+.winner-modal-button {
+  margin-right: 0;
+  padding: 0.6rem 3rem;
+}
