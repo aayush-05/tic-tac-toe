@@ -18,7 +18,7 @@ const WinnerModal = () => {
 
   let whoWon: string | null = null
   if (currentOutcome === 1) {
-      whoWon = players.player1;
+    whoWon = players.player1;
   } else {
     whoWon = players.player2;
   }

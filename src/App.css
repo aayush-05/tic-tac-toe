@@ -59,7 +59,7 @@ body {
   -webkit-text-fill-color: transparent
 }
 
-.button-primary {
+.primary-button {
   background-color: var(--primary-blue);
   border: 0;
   border-radius: 0.3rem;
@@ -70,15 +70,15 @@ body {
   transition: opacity 0.2s ease;
 }
 
-.button-primary:focus {
+.primary-button:focus {
   outline: 0;
 }
 
-.button-primary:disabled {
+.primary-button:disabled {
   cursor: not-allowed;
   opacity: 0.6;
 }
 
-.button-primary:focus-visible {
+.primary-button:focus-visible {
   box-shadow: 0 0 0 0.2rem var(--primary-blue-shadow);
 }

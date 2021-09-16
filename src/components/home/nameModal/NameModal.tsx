@@ -75,7 +75,7 @@ const NameModal = () => {
             <div className='name-modal-field-container'>
               <input 
                 type='submit' 
-                className='button-primary name-modal-submit-button' 
+                className='primary-button name-modal-submit-button' 
                 aria-label='Play' 
                 value='Play' 
                 disabled={player1Name === '' || player2Name === ''} 

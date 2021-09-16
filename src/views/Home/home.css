@@ -1,7 +1,7 @@
 .home-header-container {
-  left: 0;
   height: 80px;
-  position: fixed;
+  left: 0;
+  position: static;
   top: 0;
   width: 100vw;
 }
@@ -23,7 +23,8 @@
 
 .home-main-container {
   display: flex;
-  padding: 100px 1rem 0;
+  flex-wrap: wrap;
+  padding: 20px 1rem 0;
   justify-content: space-around;
   width: 100vw;
 }

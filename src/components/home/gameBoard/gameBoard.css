@@ -1,14 +1,10 @@
-:root {
-  --black: #000000;
-  --white: #ffffff;
-  --primary-blue: #004d7a;
-}
-
 .gameboard-game-container {
   border: 0.1rem solid var(--container-border);
   border-radius: 0.4rem;
   box-shadow: 0 8px 15px var(--container-shadow);
   flex: 0 0 60%;
+  min-height: 80vh;
+  margin-bottom: 2rem;
   min-width: 304px;
   padding: 4rem 1rem 1rem;
 }
@@ -83,4 +79,16 @@
 
 .gameboard-buttons {
   margin: 0.6rem;
+}
+
+@media (max-width: 768px) {
+  .gameboard-game-container {
+    flex-basis: 50%;
+  }
+}
+
+@media (max-width: 632px) {
+  .gameboard-game-container {
+    flex-basis: 100%;
+  }
 }

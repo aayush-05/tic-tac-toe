@@ -11,7 +11,7 @@ import {
   useAppSelector,
 } from '../../../store/hooks';
 
-function GameBoard() {
+const GameBoard = () => {
   const dispatch = useAppDispatch();
   const {
     players,
@@ -21,7 +21,7 @@ function GameBoard() {
   } = useAppSelector((state) => state.gameData);
 
   const renderSquares = (movesTracker: number[]) => {
-    const squaresArray = [];
+    const squaresArray: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>[] = [];
   
     for (let index = 0; index < 9; index++) {
       squaresArray.push(
@@ -65,7 +65,7 @@ function GameBoard() {
       <div className='gameboard-user-container'>
         <h6>
           <b>Next Player:</b>
-          &nbsp;&nbsp;
+          {' '}
           <img src={userIcon} alt='User Icon' className='gameboard-user-icon'/>
           {' '}
           {currentPlayer === 1 ? players.player1 : players.player2}
@@ -73,7 +73,7 @@ function GameBoard() {
       </div>
       <div className='gameboard-buttons-container'>
         <button 
-          className='button-primary gameboard-buttons'
+          className='primary-button gameboard-buttons'
           onClick={() => {
             dispatch(undoTurn())
           }}
@@ -81,7 +81,7 @@ function GameBoard() {
           Undo Move
         </button>
         <button 
-          className='button-primary gameboard-buttons'
+          className='primary-button gameboard-buttons'
           onClick={() => {
             dispatch(resetGame())
           }}
