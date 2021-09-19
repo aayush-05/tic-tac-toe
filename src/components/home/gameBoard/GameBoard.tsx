@@ -66,7 +66,7 @@ const GameBoard = () => {
         <div className="gameboard-player-details">
           <img src={userIcon} alt='User Icon' className='gameboard-user-icon'/>
           <p>{players.player1}</p>
-          <p>(<small>✕</small>)</p>
+          <p><small>✕</small></p>
         </div>
         <div className='gameboard-container'>
           {renderSquares(movesTracker)}
@@ -74,7 +74,7 @@ const GameBoard = () => {
         <div className="gameboard-player-details">
           <img src={userIcon} alt='User Icon' className='gameboard-user-icon'/>
           <p>{players.player2}</p>
-          <p>(<small>〇</small>)</p>
+          <p><small>〇</small></p>
         </div>
       </div>
       <div className='gameboard-user-container'>
