@@ -29,7 +29,7 @@ const saveScores = (participantData: leaderboardUserDataType) => {
     } else {
       if (participantData.hasWon === isUser.name) {
         isUser.wonMatches += 1;
-      } else if (participantData.hasWon === null)  {
+      } else if (participantData.hasWon !== null)  {
         isUser.lostMatches += 1;
       }
     }
