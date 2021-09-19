@@ -3,13 +3,13 @@
     border-radius: 0.4rem;
     box-shadow: 0 8px 15px var(--container-shadow);
     flex: 0 0 25%;
-    min-height: 80vh;
+    max-height: 80vh;
     margin-bottom: 1rem;
     padding: 1rem;
 }
 
 .leaderboard-users-container {
-  height: calc(80vh - 50px);
+  height: calc(80vh - 100px);
   overflow-y: scroll;
   width: 100%;
 }

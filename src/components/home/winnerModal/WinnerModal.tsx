@@ -2,7 +2,10 @@ import './winnerModal.css';
 
 import { useEffect } from 'react';
 
-import { resetGame } from '../../../store/actions/gameActions';
+import {
+  resetGame,
+  startNewGame,
+} from '../../../store/actions/gameActions';
 import { updateLeaderboard } from '../../../store/actions/userActions';
 import {
   useAppDispatch,
@@ -31,9 +34,13 @@ const WinnerModal = () => {
     }))
   }, [])
 
-  const buttonOnClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+  const buttonOnClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>, isNewGame: boolean) => {
     e.preventDefault();
-    dispatch(resetGame());
+    if (isNewGame) {
+      dispatch(startNewGame());
+    } else {
+      dispatch(resetGame());
+    }
   }
 
   return (
@@ -41,7 +48,7 @@ const WinnerModal = () => {
     <div className='modal-backdrop'></div>
     <div className='modal-outer-container'>
       <div className='modal-container'>
-        <h2 className='modal-heading'>
+        <h3 className='modal-heading'>
           {currentOutcome === -1 && (
             <>It's a Draw</>
           )}
@@ -51,10 +58,13 @@ const WinnerModal = () => {
             } Won!
             </>
           )}
-        </h2>
+        </h3>
         <h3 className='winner-modal-crown-symbol'>👑</h3>
         <div className='winner-modal-button-container'>
-          <button className='primary-button winner-modal-button' onClick={buttonOnClick}>
+          <button className='winner-modal-button' onClick={(e) => buttonOnClick(e, true)}>
+            Launch New
+          </button>
+          <button className='primary-button winner-modal-button' onClick={(e) => buttonOnClick(e, false)}>
             Play Again
           </button>
         </div>

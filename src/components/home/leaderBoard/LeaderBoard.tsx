@@ -4,7 +4,7 @@ import React from 'react';
 
 import userIcon from '../../../assets/images/userIcon.png';
 import { useAppSelector } from '../../../store/hooks';
-import { leaderboardLocalUserDataType } from '../../../store/types';
+import { leaderboardLocalUserDataType } from '../../../types';
 
 const LeaderBoard = () => {
   const {
@@ -27,9 +27,9 @@ const LeaderBoard = () => {
       </h2>
       <div className='leaderboard-users-container'>
         {leaderBoard.sort(sortLeaderboardEntries).map((userDetails, index) => (
-          <React.Fragment key={index}>
+          <React.Fragment key={`${userDetails.name} ${index}`}>
             <div className='leaderboard-user-container'>
-              <img src={userIcon} alt='User' />
+              <img src={userIcon} alt='User Icon' />
               <div className='leaderboard-user'>
               <h6 className='leaderboard-user-name'>
                 {userDetails.name}

@@ -59,8 +59,23 @@ const GameBoard = () => {
 
   return (
     <div className='gameboard-game-container'>
-      <div className='gameboard-container'>
-        {renderSquares(movesTracker)}
+      <h2 className='modal-heading gameboard-heading'>
+        PlayGround
+      </h2>
+      <div className="gameboard-outer-container">
+        <div className="gameboard-player-details">
+          <img src={userIcon} alt='User Icon' className='gameboard-user-icon'/>
+          <p>{players.player1}</p>
+          <p>(<small>✕</small>)</p>
+        </div>
+        <div className='gameboard-container'>
+          {renderSquares(movesTracker)}
+        </div>
+        <div className="gameboard-player-details">
+          <img src={userIcon} alt='User Icon' className='gameboard-user-icon'/>
+          <p>{players.player2}</p>
+          <p>(<small>〇</small>)</p>
+        </div>
       </div>
       <div className='gameboard-user-container'>
         <h6>

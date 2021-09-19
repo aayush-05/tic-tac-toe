@@ -11,6 +11,7 @@ const NameModal = () => {
   const [player2Name, setPlayer2Name] = useState('');
 
   const fieldOnchange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    e.preventDefault();
     const { name, value } = e.target;
     switch (name) {
       case 'player1-name':
@@ -20,7 +21,7 @@ const NameModal = () => {
         setPlayer2Name(value.trim());
         break;
     }
-  }
+  };
 
   const formOnSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -29,19 +30,19 @@ const NameModal = () => {
       dispatch(initializeGame({
         player1: player1Name,
         player2: player2Name,
-      }))
+      }));
     }
-  }
+  };
 
   return (
     <>
       <div className='modal-backdrop'></div>
       <div className='modal-outer-container'>
         <div className='modal-container'>
-          <h2 className='modal-heading'>
+          <h3 className='modal-heading'>
             Enter Details
-          </h2>
-          <form onSubmit={formOnSubmit}>
+          </h3>
+          <form onSubmit={formOnSubmit} className="name-modal-form">
             <div className='name-modal-field-container'>
               <label
                 htmlFor='player1-name' 
@@ -86,6 +87,6 @@ const NameModal = () => {
       </div>
     </>
   )
-}
+};
 
 export default NameModal;

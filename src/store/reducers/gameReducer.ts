@@ -1,8 +1,8 @@
-import findCurrentOutcome from '../../utils/findCurrentOutcome';
 import {
   gameDataType,
   playersDataType,
-} from '../types';
+} from '../../types';
+import findCurrentOutcome from '../../utils/findCurrentOutcome';
 
 const initialState: gameDataType = {
   players: {
@@ -56,7 +56,7 @@ const gameReducer = (
       const newPlayedSquaresSequence = [...state.playedSquaresSequence];
       newPlayedSquaresSequence.pop();
 
-      if (state.currentOutcome === 0) {
+      if (state.currentOutcome === 0 && state.playedSquaresSequence.length !== 0) {
         return {
           ...state,
           currentPlayer: state.currentPlayer === 1 ? 2 : 1,
@@ -71,6 +71,19 @@ const gameReducer = (
     case 'RESET_GAME':
       return {
         ...state,
+        currentPlayer: 1,
+        currentOutcome: 0,
+        playedSquaresSequence: [],
+        movesTracker: Array(9).fill(0),
+      };
+
+    case 'NEW_GAME':
+      return {
+        ...state,
+        players: {
+          player1: null,
+          player2: null,
+        },
         currentPlayer: 1,
         currentOutcome: 0,
         playedSquaresSequence: [],

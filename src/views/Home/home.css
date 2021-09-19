@@ -1,8 +1,5 @@
 .home-header-container {
   height: 80px;
-  left: 0;
-  position: static;
-  top: 0;
   width: 100vw;
 }
 
@@ -16,7 +13,7 @@
   font-size: 3rem;
   font-weight: 700;
   margin: 0;
-  padding: 0.6rem 0 0 1rem;
+  padding: 0.6rem 0 0 2rem;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

@@ -1,9 +1,9 @@
-import saveScores from '../../utils/saveScores';
 import {
   leaderboardLocalUserDataType,
   leaderboardUserDataType,
   usersRankingDataType,
-} from '../types';
+} from '../../types';
+import saveScores from '../../utils/saveScores';
 
 let localLeaderboard: leaderboardLocalUserDataType[] = [];
 if (localStorage.getItem('Leaderboard') !== null) {
@@ -14,7 +14,10 @@ const initialState: usersRankingDataType = {
   leaderBoard: localLeaderboard,
 };
 
-function usersRankingReducer(state = initialState, action: {type: string, payload: leaderboardUserDataType}) {
+const usersRankingReducer = (
+  state = initialState, 
+  action: {type: string, payload: leaderboardUserDataType}
+) => {
   switch(action.type) {
     case 'UPDATE_LEADERBOARD':
       return {

@@ -1,18 +1,11 @@
-type userDataType = {
-    player1: string;
-    player2: string;
-    hasWon: string | null;
-};
+import {
+  leaderboardLocalUserDataType,
+  leaderboardUserDataType,
+} from '../types';
 
-type localUserDataType = {
-  name: string;
-  lostMatches: number;
-  wonMatches: number;
-};
-
-const saveScores = (participantData: userDataType) => {
+const saveScores = (participantData: leaderboardUserDataType) => {
   const usersLocalData = localStorage.getItem('Leaderboard');
-  let parsedUsersLocalData: localUserDataType[] = [];
+  let parsedUsersLocalData: leaderboardLocalUserDataType[] = [];
   if (usersLocalData !== null) {
     parsedUsersLocalData = JSON.parse(usersLocalData);
   }
@@ -24,7 +17,7 @@ const saveScores = (participantData: userDataType) => {
     userData => userData.name === participantData.player2
   );
 
-  const addUserScore = (userName: string, isUser? : localUserDataType) => {
+  const addUserScore = (userName: string, isUser? : leaderboardLocalUserDataType) => {
     if (isUser === undefined) {
       const newParticipantData = {
         name: userName,

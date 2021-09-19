@@ -6,18 +6,21 @@ import NameModal from '../../components/home/nameModal/NameModal';
 import WinnerModal from '../../components/home/winnerModal/WinnerModal';
 import { useAppSelector } from '../../store/hooks';
 
-function Home () {
+const Home = () => {
   const {
     players,
     currentOutcome,
   } = useAppSelector((state) => state.gameData);
 
+  const isWinner = currentOutcome !== 0;
+  const arePlayersInitialized = players.player1 === null && players.player2 === null;
+
   return (
     <>
-      {currentOutcome !== 0 && (
+      {isWinner && (
         <WinnerModal />
       )}
-      {players.player1 === null && players.player2 === null && (
+      {arePlayersInitialized && (
         <NameModal />
       )}
       <nav className='home-header-container'>
